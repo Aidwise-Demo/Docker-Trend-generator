@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./Trend-Generator-FrontEnd
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    command: npm run dev
+    volumes:
+      - ./Trend-Generator-FrontEnd:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - trend-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./Trend-Generator-Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    working_dir: /app
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./Trend-Generator-Backend:/app
+      - /app/__pycache__
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ENVIRONMENT=development
+    networks:
+      - trend-network
+    restart: unless-stopped
+
+networks:
+  trend-network:
+    driver: bridge
