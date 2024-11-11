@@ -1,6 +1,4 @@
-# Disease Predictor
-
-A web application for predicting diseases using machine learning algorithms.
+# Trend Generator
 
 ## Project Structure
 
