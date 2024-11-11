@@ -1,32 +1,37 @@
+# Disease Predictor
 
-Project Structure
+A web application for predicting diseases using machine learning algorithms.
 
-Docker-Trend-generator/
+## Project Structure
 
-├── Trend-Generator Backend    # Backend FastAPI application
+```
+Docker Trend Generator/
+├── Trend Generator Frontend/    # Backend FastAPI application
+├── Trend Generator Backend/                  # Frontend application
+└── Docker-compose.yml           # Docker composition file
+```
 
-├──trend -Generator Frontend                  # Frontend application
+## Prerequisites
 
-└── Docker-compose.yml            # Docker composition file
+- Docker(https://www.docker.com/products/docker-desktop/)
+- Docker Compose
+- Node.js (for local development)
+- Python 3.9+ (for local development)
 
+## Getting Started
 
-Prerequisites
-Docker(https://www.docker.com/products/docker-desktop/)
+1. Clone the repository:
+```bash
+git clone https://github.com/Aidwise-Demo/Docker-Trend-generator.git
+cd Docker-Trend-generator
+```
 
-Getting Started
-
-
-Clone the repository:
-
-git clone https://github.com/Aidwise-Demo/Disease_predictor_docker.git
-
-cd Disease_predictor_docker
-
-Start the application using Docker Compose:
-
+2. Start the application using Docker Compose:
+```bash
 docker-compose up --build
+```
 
-Access the application:
+3. Access the application:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8000
 
-Frontend: http://localhost:3000
-Backend: http://localhost:8000
